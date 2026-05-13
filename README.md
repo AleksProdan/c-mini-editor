@@ -33,7 +33,7 @@ gcc minieditor.c -o minieditor
 * [x] Open file using `open()`
 * [x] Read file using `read()`
 * [x] Output file content using `write()`
-* [ ] Accept filename via CLI arguments (`argv`)
+* [x] Accept filename via CLI arguments (`argv`)
 
 ---
 

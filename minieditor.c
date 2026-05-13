@@ -19,6 +19,7 @@ int main() {
     while ((data = read(fd, buffer, BUFFER_SIZE)) > 0) {
         write(STDOUT_FILENO, buffer, data);
     }
+
     write(STDOUT_FILENO, "\n", 1);
 
     if (data == -1) {
@@ -26,7 +27,7 @@ int main() {
         close(fd);
         return 1;
     }
-
+    
     close(fd);
     return 0;
 }

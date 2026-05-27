@@ -15,14 +15,14 @@ The goal is to understand low-level Linux programming concepts such as:
 
 ## Current Features
 
-* Open and read a file (currently hardcoded filename)
+* Open and read a file
 * Read file content using low-level system calls
 * Output file content to the terminal
 
 ## Example
 
 ```bash
-gcc minieditor.c -o minieditor
+gcc -Wall -Wextra minieditor.c -o minieditor
 ./minieditor test.txt
 ```
 
@@ -39,75 +39,28 @@ gcc minieditor.c -o minieditor
 
 ### Phase 2 – Memory Handling
 
-* [ ] Load entire file into memory
-* [ ] Dynamically resize buffer (`malloc`, `realloc`)
-* [ ] Store file as editable structure
+* [x] Get file size with `stat()`
+* [x] Allocate dynamic heap buffer
+* [x] Load entire file into memory
+* [x] Null-terminate file buffer
+* [x] Manage memory with `malloc()` and `free()`
 
 ---
 
-### Phase 3 – Terminal Control
+### Phase 3 – Editable Buffer System
 
-* [ ] Switch terminal to raw mode
-* [ ] Disable canonical input & echo
-* [ ] Read single key presses
+* [ ] Track buffer length
+* [ ] Track buffer capacity
+* [ ] Resize buffer dynamically with `realloc()`
+* [ ] Append text to buffer
+* [ ] Modify in-memory text
+* [ ] Prepare buffer for insert/delete operations
 
 ---
 
 ### Phase 4 – Input Handling
 
-* [ ] Capture user input
-* [ ] Handle basic keys (letters, backspace, enter)
-* [ ] Implement simple input loop
-
----
-
-### Phase 5 – Screen Rendering
-
-* [ ] Clear and redraw screen
-* [ ] Render file content from memory
-* [ ] Implement basic refresh system
-
----
-
-### Phase 6 – Cursor Control
-
-* [ ] Track cursor position (x, y)
-* [ ] Move cursor with arrow keys
-* [ ] Handle boundaries (start/end of line)
-
----
-
-### Phase 7 – Text Editing
-
-* [ ] Insert characters
-* [ ] Delete characters (backspace)
-* [ ] Handle new lines
-* [ ] Update buffer accordingly
-
----
-
-### Phase 8 – File Saving
-
-* [ ] Save file using `write()`
-* [ ] Overwrite existing file
-* [ ] Create new file if it doesn't exist
-
----
-
-### Phase 9 – Commands
-
-* [ ] Quit editor (e.g. Ctrl+Q)
-* [ ] Save command (e.g. Ctrl+S)
-* [ ] Status bar / feedback
-
----
-
-### Phase 10 – Polishing
-
-* [ ] Improve performance
-* [ ] Handle edge cases
-* [ ] Refactor code structure
-* [ ] Add comments and documentation
+* [ ] Coming soon...
 
 ## Project Status
 

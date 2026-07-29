@@ -3,3 +3,6 @@ minieditor
 
 # object files
 *.o
+
+# text files
+*.txt

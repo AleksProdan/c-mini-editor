@@ -9,6 +9,8 @@ int main(int argc, char *argv[])
     char *buffer;
     int fd;
     ssize_t data;
+    size_t bufferLength;
+    size_t bufferCapacity;
     struct stat st;
 
     if (argc != 2) {
@@ -29,9 +31,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    size_t fileSize = st.st_size;
+    size_t fileSize = (size_t)st.st_size;
 
-    buffer = malloc(fileSize + 1);
+    bufferCapacity = fileSize + 1;
+    buffer = malloc(bufferCapacity);
 
     if (buffer == NULL) {
         perror("Error allocating memory");
@@ -48,10 +51,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    buffer[data] = '\0';
+    bufferLength = (size_t)data;
+    buffer[bufferLength] = '\0';
 
-    write(STDOUT_FILENO, buffer, data);
-    write(STDOUT_FILENO, "\n", 1);
+    write(STDOUT_FILENO, buffer, bufferLength);
 
     free(buffer);
     close(fd);

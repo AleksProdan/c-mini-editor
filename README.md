@@ -49,8 +49,8 @@ gcc -Wall -Wextra minieditor.c -o minieditor
 
 ### Phase 3 – Editable Buffer System
 
-* [ ] Track buffer length
-* [ ] Track buffer capacity
+* [x] Track buffer length
+* [x] Track buffer capacity
 * [ ] Resize buffer dynamically with `realloc()`
 * [ ] Append text to buffer
 * [ ] Modify in-memory text
